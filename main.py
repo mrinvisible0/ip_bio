@@ -2,11 +2,13 @@
 import csv
 import Bio.SeqIO as SeqIO
 
-mink_filepath = "metadata/mink_coding_regions_only_MN535737.fasta"
-pangolin_filepath = "metadata/pangolin_coding_regions_only_MIT121126.fasta"
+mink_filepath = "metadata/mink_coding_regions.fasta"
+pangolin_filepath = "metadata/pangolin_coding_regions.fasta"
+nextstrain_filepath = "metadata/nextstrain_ncov_global_metadata.tsv"
+
 GENBANK_INDEX = 11
 def filter_genbank():
-    tsv_metadata = open("metadata/nextstrain_ncov_global_metadata.tsv")
+    tsv_metadata = open(nextstrain_filepath)
     reader = csv.reader(tsv_metadata, delimiter="\t")
 
     we_need_those = []
